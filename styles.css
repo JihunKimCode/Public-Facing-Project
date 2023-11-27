@@ -1,0 +1,1040 @@
+@font-face{
+    font-family: 'NanumB';
+    src: url('fonts/NanumBarunGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'NanumS';
+    src: url('fonts/NanumSquareRoundB.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --background: rgb(245,245,245);
+    --white: #fff;
+    --grey: #a8a29c;
+    --section: #63c5da;
+    --overlay: rgba(0, 0, 0, 0.9);
+    --imgborder: #1288F8;
+    --icon: rgb(228, 228, 228);
+    --resume: #0492c2;
+    --resumehov: #48aaad;
+    --text: #000;
+    --buttonhov: #fff;
+    --hover: #00d6fa;
+}
+
+.dark-mode {
+    --background: #022d36;
+    --white: #fff;
+    --grey: #a8a29c;
+    --section: #3944bc;
+    --overlay: rgba(0, 0, 0, 0.9);
+    --imgborder: #051094;
+    --icon: rgb(228, 228, 228);
+    --resume: #1338BE;
+    --resumehov: #051094;
+    --text: rgb(228, 228, 228);
+    --buttonhov: #000;
+    --hover: #1288F8;
+}
+
+/* Scroll Bar Width */
+::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    height: calc(100% - 3em);
+    overflow-y: auto;
+    width: 12px;
+    height: 12px;
+}
+
+/* Scroll Bar Track */
+::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Scroll Bar Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--imgborder);  
+    border-radius: 20px;
+}
+
+/* Scroll Bar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover);  
+}
+
+body {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: 'NanumS', sans-serif;
+}
+
+header {
+    color: var(--white);
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+section{
+    width: 100%;
+    background-color: var(--background);
+}
+#menuBtn {
+    display: none;
+    position: fixed;
+}
+
+nav {
+    color: var(--grey);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    margin-top: 5px;
+}
+nav a {
+    color: var(--grey);
+    font-size: 28px;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px;
+    height: 40px;
+    transition: font-size 0.2s ease; /* Add a smooth transition effect */
+}
+
+nav a:hover {
+    font-size: 36px; /* Increase the font size on hover */
+    color: var(--hover);
+}
+
+/* Style for the active menu link (when the corresponding section is in view) */
+nav a.active {
+    font-size: 36px;
+    color: var(--hover);
+}
+
+/* Add a class for hiding the menu on mobile */
+nav.menu-hidden {
+    display: none;
+}
+
+/* Add the overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay); /* Semi-transparent black overlay */
+    z-index: 100; /* Set a higher z-index to make sure the overlay appears above the content */
+    display: none; /* Hide the overlay by default */
+}
+
+main {
+    padding: 20px;
+}
+
+/* Hide all sections except the home section by default */
+section:not(:first-of-type) {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Apply fade-in and fade-out animations to content sections */
+.content-section {
+    animation-duration: 0.5s;
+}
+
+/* Hide all sections except the home section by default */
+section:not(:first-of-type) {
+    display: none;
+}
+
+.imgdesc{
+    display: table;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.img{
+    display: table-cell;
+    width: 30%;
+}
+
+.desc{
+    display: table-cell;
+    width: 60%;
+}
+img{
+    display: table-cell;
+    width: 100%;
+    border: solid var(--imgborder);
+    border-width: 15px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    float: left;
+    animation: slideInFromLeft 1s ease; 
+}
+
+h2 {
+    font-size: 60px;
+    animation: slideInFromRight 1s ease; 
+    margin-bottom: 20px;
+}
+
+desc{
+    display: table-cell;
+    width: 100%;
+    float: right;
+    font-family: 'NanumB', sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    animation: slideInFromRight 1s ease;
+    color: var(--text);
+}
+
+/* Define the animation for the image coming from the left */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Define the animation for the description elements coming from the right */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}   
+.icons, .fticons {
+    display: flex;
+    justify-content: flex-end; /* Align the icons to the right side */
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 2; /* Ensure the icons appear above other elements */
+}
+
+/* Add spacing between the icons and remove underlines */
+.icons a {
+    margin-left: 10px;
+    font-size: 36px;
+    text-decoration: none; /* Remove underlines from the icons */
+    color: rgb(228, 228, 228) !important;
+}
+
+.icons a:hover{
+    color: white !important;
+    /* box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2); */
+    /* transform: translateY(-2px); */
+}
+
+/* .icons a:active {
+    box-shadow: none;
+    transform: translateY(0);
+} */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    color: #fff !important;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn a{
+    text-decoration: none;
+}
+
+.btn.btn-googleform {
+    background-color: #673ab7;
+    padding: 6px 8px;
+}
+
+.btn.btn-github {
+    background-color: #000000;
+}
+
+.btn.btn-email {
+    background-color: #EA4335;
+}
+
+.btn.btn-dark {
+    background-color: #000;
+}
+
+name {
+    top: 0%;
+    left: 30px;
+    z-index: 3; /* Ensure the icons appear above other elements */
+    float: left;
+    padding: 10px 10px;
+    font-size: 32px;
+    font-family: 'NanumS', sans-serif;
+}
+
+a {
+    text-decoration: none; /* Remove the underline */
+    color: #fff;
+}
+
+/* Style for hovered hyperlink text (anchors) */
+a:hover {
+    text-decoration: none; /* Add underline on hover */
+}
+
+name a {
+    text-decoration: none; /* Remove the underline */
+    color: #fff;
+}
+
+.logo {
+    top: 0%;
+    left: 30px;
+    z-index: 3; /* Ensure the icons appear above other elements */
+}
+
+.logo img {
+    width: 50px; /* Adjust the width of the logo image as needed */
+    height: auto; /* Maintain the aspect ratio of the logo */
+    margin-top: 0px;
+    border: none;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+    float: left;
+    animation: slideInFromLeft 1s ease; 
+}
+
+.biglogo{
+    width: 35%;
+}
+
+.biglogo img{
+    margin-top: 100px;
+    width: 100%;
+    border: none;
+    border-radius: 0%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: none;
+    float: left;
+    animation: slideInFromLeft 1s ease; 
+}
+
+/* Add these styles for the desired layout */
+.contact-icons {
+    margin-top: 20px;
+    /* margin-left: 60px; */
+    /* float: left; */
+    flex-direction: column;
+    justify-content: center;
+    font-size: 24px;
+    animation: slideInFromRight 1s ease; 
+}
+
+.contact-icons a{
+    margin-top: 0px;
+    text-decoration: none !important
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item .btn {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.contact-item a{
+    text-decoration: none;
+}
+
+.address {
+    font-family: 'NanumB', sans-serif;
+    font-size: 24px;
+    justify-content: center;
+    /* margin-top: 10px; */
+    cursor: pointer;
+    color: var(--text);
+    vertical-align: middle;
+    animation: slideInFromRight 1s ease; 
+}
+
+/* Common styles for the About section */
+#stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+    padding: 40px 0;
+}
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    margin-top: 25px;
+    font-size: 32px;
+    font-family: 'NanumB', sans-serif;
+    margin-right: 10px;
+    animation: slideInFromLeft 1s ease; 
+}
+
+.btn-resume {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--resume);
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-family: 'NanumS', sans-serif;
+    text-align: center;
+    animation: slideInFromRight 1s ease; 
+    transition: all 0.3s;
+}
+
+.btn-resume:hover {
+    background-color: var(--resumehov);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.btn-resume:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.about-content {
+    display: table;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.education{
+    display: table-cell;
+    width: 49%;
+    padding: 10px;
+    background-color: var(--section);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease; 
+    color: var(--text);
+}
+
+.skills{
+    display: table-cell;
+    width: 49%;
+    padding: 15px;
+    background-color: var(--section);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideInFromRight 1s ease; 
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.skills h3{
+    text-decoration: underline;
+}
+
+.education .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.education img {
+    display: block;
+    width: 100%;
+    margin-top: 0px;
+    margin: 0 auto;
+    border: none;
+    border-width: 1px;
+    border-radius: 0%;
+    animation: none;
+}
+
+.education h3{
+    text-align: center;
+}
+
+.topic{
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: 'NanumB', sans-serif;
+    line-height: 1.2;
+}
+
+.section-interval {
+    width: 2%; /* Adjust the width of the interval as needed */
+}
+
+h3{
+    font-family: 'NanumB', sans-serif;
+    font-size: 24px;
+    margin-bottom: 9px;
+}
+
+li{
+    font-family: 'NanumB', sans-serif;
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+.desc h3{
+    font-size: 32px;
+    text-align: center;
+}
+
+.desc p{
+    font-style: italic;
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.desc a{
+    color: var(--text);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.desc a:hover{
+    text-decoration: none;
+    color: #846d62;
+}
+
+.img img{
+    margin-top: 40px;
+    display: table-cell;
+    width: 100%;
+    border: solid var(--imgborder);
+    border-width: 5px;
+    border-radius: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--section);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    float: left;
+    animation: slideInFromLeft 1s ease; 
+}
+
+.sect {
+    display: none;
+}
+
+.buttons{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.button{
+    border: 2px solid var(--text);
+    border-radius: 30px;
+    box-sizing: border-box;
+    
+    background-color: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+    
+    height: 35px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.button:hover{
+    color: var(--buttonhov);
+    background-color: var(--text);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2),0 10px 10px 0 rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.buttons a{
+    text-decoration: none;
+}
+.projsect{
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-top: 100px;
+}
+
+.projsect-text {
+    background-color: var(--background);
+    padding: 0 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 28px;
+    color: var(--text);
+}
+
+.projsect-line {
+    width: 100%;
+    border: none;
+    border-top: 2px solid var(--text);
+}
+
+footer {
+    background-color: var(--imgborder);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+button#backToTopBtn {
+    background-color: transparent;
+    color: rgb(228, 228, 228);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button#backToTopBtn:hover {
+    color: white;
+}
+
+.footicons{
+    display: none;
+}
+
+/* Styles for tablets (screen sizes between 768px and 1023px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .projsect{
+        margin-top: 140px;
+    }
+
+    .imgdesc{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 80px;
+    }
+
+    .img{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        order: 1;
+        margin-top: 0px;
+        gap: 1%;
+        justify-content: center;
+    }
+
+    .img img{
+        border-width: 3px;
+        width: 45%;
+    }
+
+    .desc{
+        display: flex;
+        width: 100%;
+        order: 2;
+    }
+
+    img{
+        width: 100%;
+        border-radius: 50%;
+        position: relative;
+        margin-top: 40px;
+    }
+        
+    nav {
+        width: 100%;
+    }    
+
+    .contact-icons {
+        margin-top: 0px;
+    }
+    
+    .resume {
+        margin-top: 70px;
+    }
+}
+
+/* Media query for mobile-friendly styles */
+@media (max-width: 767px) {
+    header{
+        position: fixed;
+        background-color: var(--background);
+        height: 40px;
+        padding: 10px;
+    }
+
+    /* Show the menu button and hide the menu initially */
+    #menuBtn {
+        display: block;  
+        border: none;
+        font-size: 24px;
+        color:  #846d62;
+        background-color: var(--background);
+        cursor: pointer;
+        float: left;
+        left: 3%;
+        width: 30px;
+    }
+    
+    /* Position the menu container */
+    nav {
+        position: fixed;
+        padding: 20px 0px 0px 0px;
+        top: 50px; /* Adjust this value to control the vertical position of the menu */
+        width: 95%;
+        text-align: center;
+        background-color: var(--overlay);
+        z-index: 2;
+        display: none; /* Hide the menu by default */
+    }
+    
+    nav a {
+        font-size: 20px;
+    }
+
+    nav a:hover {
+        font-size: 24px; /* Increase the font size on hover */
+        color: #846d62;
+    }
+    
+    /* Style for the active menu link (when the corresponding section is in view) */
+    nav a.active {
+        font-size: 24px;
+        color: #846d62;
+    }
+    
+    /* Show the menu items when the menu is visible */
+    nav.menu-visible {
+        display: flex;
+        flex-direction: column;
+        z-index: 3; /* Ensure the menu appears above the overlay */
+    }
+    /* Add a class for hiding the menu on mobile */
+    nav.menu-hidden {
+        display: none;
+    }
+    
+    /* Show the menu dropdown when hovering over the menu on mobile */
+    nav:hover .menu-dropdown {
+        display: block;
+    }
+
+    /* Show the overlay when the menu is visible */
+    .overlay.overlay-visible {
+        display: block;
+        z-index: 3;
+    }
+
+    .imgdesc{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .img{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        order: 1;
+    }
+
+    .img img{
+        border-width: 3px;
+    }
+
+    .desc{
+        display: flex;
+        width: 100%;
+        order: 2;
+    }
+
+    img{
+        width: 100%;
+        border-radius: 50%;
+        position: relative;
+        /* margin-top: 40px; */
+    }
+
+    .biglogo img{
+        width: 70%;
+        border-radius: 50%;
+        position: absolute;
+        margin-top: 40px;
+    }
+
+    desc{
+        font-family: 'NanumB', sans-serif;
+        font-size: 20px;
+        width: 100%;
+        position: relative;
+        /* margin-top: 320px; */
+        padding-bottom: 20px;
+        line-height: 1.5;
+    }    
+    
+    h2 {
+        font-size: 32px;
+        width: 90%;
+    }
+    
+    /* Logo centered on top for mobile devices */
+    .logo {
+        width: 100%;
+        top: 5px;
+        z-index: 3; /* Ensure the icons appear above other elements */
+    
+        display: flex;
+        justify-content: flex-start;
+        /* margin-top: 20px; */
+        position: fixed;
+        left: 12%;
+    }
+
+    .logo img {
+        width: 50px; /* Adjust the width of the logo image as needed */
+        height: auto; /* Maintain the aspect ratio of the logo */
+        box-shadow: none;
+        float: right;
+        animation: none; 
+    }
+
+    .icons {
+        display: none;
+    }
+
+    name{
+        width: 100%;
+        top: 5px;
+        z-index: 3; /* Ensure the icons appear above other elements */
+    
+        display: flex;
+        justify-content: flex-start;
+        /* margin-top: 20px; */
+        position: fixed;
+        left: 24%;
+    }
+    
+    .biglogo{
+        width: 35%;
+    }
+    
+    .biglogo img{
+        margin-top: 40px;
+        width: 60%;
+        float: left;
+    }
+    
+    /* Add these styles for the desired layout */
+    .contact-icons {
+        /* margin-top: 100%; */
+        margin-left: 0px;
+        font-size: 32px;
+    }
+    
+    .contact-icons a{
+        margin-top: 10px;
+    }
+    
+    .contact-item {
+        width: 90%;
+    }
+    
+    .address {
+        width: 90%;
+        font-size: 20px;
+        /* margin-top: 10px; */
+    }
+    .about-content{
+        flex-direction: column;
+        background-color: none;
+    }
+
+    .education,
+    .skills {
+        display: grid;
+        width: fit-content;
+        justify-content: center;
+        align-items: center; /* Center vertically */
+        box-shadow: none;
+        border-radius: 0px;
+        border: none;
+        background-color: var(--background);
+        position:relative;
+    }
+
+    ul, li{
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .resume {
+        left: 0%;
+        width: 90%;
+        font-size: 18px;
+        position: relative;
+        margin-right: 0px;
+        align-items: start;
+    }
+
+    .education .image-container {
+        width: 100%;
+        position: relative;
+        margin-bottom: 0px;
+    }
+
+    .section-interval {
+        display: none; /* Hide the interval on mobile */
+    }
+    .topic{
+        display: none;
+        font-size: 28px;
+        margin-bottom: 10px;
+        text-align: left;
+        text-decoration: underline;
+    }
+    .skills h3{
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    .resume h2 {
+        font-size: 28px;
+        font-family: 'NanumB', sans-serif;
+        animation: slideInFromLeft 1s ease; 
+    }
+
+    .sect{
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: var(--text);
+    }
+    
+    .sect-text {
+        background-color: var(--background);
+        padding: 0 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-size: 28px;
+    }
+
+    .sect-line {
+        width: 100%;
+        border: none;
+        border-top: 2px solid var(--text);
+        margin: 0;
+    }
+
+    .projsect{
+        text-align: center;
+        position: relative;
+        display: block;
+        margin-top: 70px;
+    }
+    
+    .projsect-text {
+        font-size: 24px;
+    }
+
+    .footicons{
+        font-size: 32px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 20px;
+        color: white;
+    }
+
+    .footicons .btn {
+        margin-right: 15px;
+    }
+}
