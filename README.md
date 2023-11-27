@@ -4,6 +4,8 @@ This is the repository for the Public-Facing Project from ENGL 355 in UTK.
 # So, what is this?
 I made a website that covers fact-checking about GenAI, especially ChatGPT.
 
+**Website link**: https://jihunkimcode.github.io/Public-Facing-Project/index.html
+
 ## Audience, Purpose, Genre
 **1. Which genre is best suited to your audience and argument?**
   - I want to allow users to interact with my text, so the website format sounds ideal at this point.
