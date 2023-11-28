@@ -565,7 +565,7 @@ li{
 
 .desc a:hover{
     text-decoration: none;
-    color: #846d62;
+    color: #1288F8;
 }
 
 .img img{
@@ -751,7 +751,7 @@ button#backToTopBtn:hover {
         display: block;  
         border: none;
         font-size: 24px;
-        color:  #846d62;
+        color:  #1288F8;
         background-color: var(--background);
         cursor: pointer;
         float: left;
@@ -777,13 +777,13 @@ button#backToTopBtn:hover {
 
     nav a:hover {
         font-size: 24px; /* Increase the font size on hover */
-        color: #846d62;
+        color: #1288F8;
     }
     
     /* Style for the active menu link (when the corresponding section is in view) */
     nav a.active {
         font-size: 24px;
-        color: #846d62;
+        color: #1288F8;
     }
     
     /* Show the menu items when the menu is visible */
