@@ -546,7 +546,7 @@ li{
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
-    color: #444;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -583,6 +583,10 @@ li{
     background-color: #f1f1f1;
     border-radius: 25px;
     font-size: 20px
+}
+
+.content p{
+    color: black;
 }
   
 .desc h3{
