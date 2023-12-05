@@ -1,0 +1,14 @@
+1. What is the primary purpose for using GenAI?
+2. What is the primary reason for not using GenAI?
+-> Enumerate them and connect them into the hyperlink of advantage and disadvantage
+
+3. Make a graph, table, word scatter based on the answer collection
+-> make csv, do pandas
+
+4. What makes people avoid using ChatGPT?
+-> same as 1&2
+
+5. [1]-[4] Show the percentage of correct answer. Is there difference between people using ChatGPT vs not using ChatGPT
+6. Is there any difference of answer correctness between ENGL 355 or not?
+7. Move on to advantage and disadvantage to introduce you're right or not.
+-> It could be nice to separate section for this.
