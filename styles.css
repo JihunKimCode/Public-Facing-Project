@@ -320,12 +320,14 @@ name {
 
 a {
     text-decoration: none; /* Remove the underline */
-    color: #fff;
+    color: var(--text);
+    text-decoration: underline;
 }
 
 /* Style for hovered hyperlink text (anchors) */
 a:hover {
     text-decoration: none; /* Add underline on hover */
+    color: #1288F8;
 }
 
 name a {
@@ -414,7 +416,7 @@ name a {
 }
 
 /* Common styles for the About section */
-#perception, #comparison {
+#usage, #perception {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -495,7 +497,7 @@ name a {
 }
 
 .skills h3{
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .education .image-container {
@@ -506,7 +508,7 @@ name a {
 
 .education img {
     display: block;
-    width: 75%;
+    width: 80%;
     margin-top: 0px;
     margin: 0 auto;
     border: none;
@@ -517,6 +519,7 @@ name a {
 
 .education h3{
     text-align: center;
+    line-height: 1.5;
 }
 
 .topic{
@@ -565,7 +568,7 @@ li{
     margin-left: 5px;
 }
 
-.skills .active:after {
+.education .active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
   
@@ -582,11 +585,13 @@ li{
     overflow: hidden;
     background-color: #f1f1f1;
     border-radius: 25px;
-    font-size: 20px
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .content p{
     color: black;
+
 }
   
 .desc h3{
