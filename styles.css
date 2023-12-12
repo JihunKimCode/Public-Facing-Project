@@ -314,7 +314,7 @@ name {
     z-index: 3; /* Ensure the icons appear above other elements */
     float: left;
     padding: 10px 10px;
-    font-size: 32px;
+    font-size: 28px;
     font-family: 'NanumS', sans-serif;
 }
 
@@ -623,8 +623,8 @@ li{
     display: table-cell;
     width: 100%;
     border: solid var(--imgborder);
-    border-width: 5px;
-    border-radius: 30px;
+    border-width: 3px;
+    border-radius: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
