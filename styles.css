@@ -194,7 +194,7 @@ section:not(:first-of-type) {
 
 .desc{
     display: table-cell;
-    width: 60%;
+    width: 45%;
 }
 img{
     display: table-cell;
@@ -498,6 +498,8 @@ name a {
 
 .skills h3{
     text-decoration: none;
+    text-align: left !important;
+    font-size: 24px !important;
 }
 
 .education .image-container {
@@ -520,6 +522,7 @@ name a {
 .education h3{
     text-align: center;
     line-height: 1.5;
+    font-size: 24px !important;
 }
 
 .topic{
@@ -546,6 +549,11 @@ h3{
     font-family: 'NanumB', sans-serif;
     font-size: 24px;
     margin-bottom: 9px;
+}
+
+.content-section h3{
+    text-align: center;
+    font-size: 32px;
 }
 
 li{
