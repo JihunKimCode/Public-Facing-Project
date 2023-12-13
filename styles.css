@@ -535,6 +535,13 @@ name a {
     width: 2%; /* Adjust the width of the interval as needed */
 }
 
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    line-height: 1.5;
+}
+
 h3{
     font-family: 'NanumB', sans-serif;
     font-size: 24px;
