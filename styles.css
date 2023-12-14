@@ -585,7 +585,7 @@ li{
     margin-left: 5px;
 }
 
-.education .active:after {
+.skills .active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
   
